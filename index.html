@@ -123,7 +123,8 @@ ul,ol{list-style:none;padding:0}
 .burger[aria-expanded="true"] i:nth-child(2){opacity:0}
 .burger[aria-expanded="true"] i:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 @media (min-width:640px){.nav__cta{display:inline-flex}}
-@media (min-width:1024px){.nav__links{display:flex}.nav__end .burger{display:none}}
+@media (min-width:1180px){.nav__links{display:flex}.nav__end .burger{display:none}}
+.nav__links a{white-space:nowrap}
 
 /* Menu mobile: painel que desce do topo, curto e interrompível */
 .sheet{position:fixed;inset:0;z-index:45;background:var(--bg);padding:100px var(--pad-x) var(--s6);display:flex;flex-direction:column;
@@ -573,7 +574,7 @@ body.locked{overflow:hidden}
   burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
   $$('a', sheet).forEach(a => a.addEventListener('click', () => setMenu(false)));
   addEventListener('keydown', e => { if (e.key === 'Escape' && sheet.classList.contains('open')) { setMenu(false); burger.focus(); } });
-  matchMedia('(min-width:1024px)').addEventListener('change', e => e.matches && setMenu(false));
+  matchMedia('(min-width:1180px)').addEventListener('change', e => e.matches && setMenu(false));
 
   // Acordeão (um aberto por vez)
   const items = $$('.acc__item');
